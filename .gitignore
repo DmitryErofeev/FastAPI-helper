@@ -1,2 +1,9 @@
 .vscode/launch.json
 config.json
+jsondata
+misc/config.txt
+misc/MES4.txt
+misc/MES3.txt
+misc/MES1.txt
+__pycache__/main.cpython-39.pyc
+
