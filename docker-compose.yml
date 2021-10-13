@@ -4,7 +4,10 @@ services:
   api:
     build:
       context: .
-    image: myfastapi:latest
+    image: fastapi-new:latest
     restart: always
     ports:
       - "8000:8000"
+    volumes:
+      - ./misc:/misc-volume    
+

@@ -103,7 +103,7 @@ async def make_conf_mes1124m(request: Request):
         if device.device_type.slug == 'mes1124m':
 
 
-            with open('misc\MES1.txt', 'r') as f1:
+            with open('./misc/MES1.txt', 'r') as f1:
                 temp_conf = []
 
                 for line in f1:
@@ -150,7 +150,7 @@ async def make_conf_mes1124m(request: Request):
             config.append(f'ip default-gateway {gateway}\n')
 
 
-            with open('misc\mes3.txt') as f2:
+            with open('./misc/MES3.txt') as f2:
                 for line in f2:
 
                     if 'access-node-id' in line:
@@ -174,7 +174,7 @@ async def make_conf_mes1124m(request: Request):
                         config.append(line)
 
 
-            with open('misc\MES4.txt') as f3:
+            with open('./misc/MES4.txt') as f3:
                 for line in f3:
                     if 'switchport access vlan' in line:
                         pppoe_vlan = [str(element['vid']) for element in vlans if 'pppoe' in element['name']]
@@ -184,7 +184,7 @@ async def make_conf_mes1124m(request: Request):
                         config.append(line)
 
 
-            with open('misc\config.txt', 'w') as final_conf:
+            with open('/misc-volume/config.txt', 'w') as final_conf:
                 for line in config:
                     final_conf.write(line)
 
